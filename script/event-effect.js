@@ -15,8 +15,8 @@ function hoverEffect() {
     imageContainer.style.padding = "0px 0px 0px 25px"
     socialContainer.style.paddingLeft = "200px"
     socialContainer.style.paddingRight = "30px"
-    socialContainer.style.background = "rgb(64, 68, 105)"
-    imageContainer.style.background = "rgb(64, 68, 105)"
+    socialContainer.style.background = "#e0f1db"
+    imageContainer.style.background = "e0f1db"
 }
 
 function unHoverEffect() {
@@ -51,4 +51,29 @@ setTimeout(() => {
 }, 1000);
 
   });
+
+
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Function to trigger the animation when the element is in the viewport
+function animateOnScroll() {
+  const element = document.getElementById('animated-text');
+  if (isInViewport(element)) {
+    element.classList.add('language-used');
+  }
+}
+
+// Add a scroll event listener to trigger the animation
+window.addEventListener('scroll', animateOnScroll);
+
+
+
 

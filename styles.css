@@ -1,9 +1,10 @@
 :root {
-  --bg-color: #070a2d;
-  --font-color: #cdced5;
-  --link-color: lightblue;
-  --text-color-1: rgba(0, 179, 119, 1);
-  --text-color-2: rgba(214, 255, 127, 1);
+  --bg-color: #e0f1db;
+  --font-color: #182D11;
+  --link-color: #1bb6b6;
+  --text-color-1: #365e29;
+  --text-color-2: #365e29;
+  --text-color-4: #365e29;
   --headline-color: white;
 }
 html {
@@ -16,7 +17,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  /* min-height: 10vh; */
   background-color: var(--bg-color);
   text-align: center;
   font-family: "Work Sans", sans-serif;
@@ -28,18 +29,24 @@ h1,
 h2,
 h3 {
   font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
 }
 h1 {
   font-size: 36px;
   color: var(--headline-color);
   animation: fadeInLeft 1s ease;
+  /* font-weight: lighter; */
+
 }
 h2 {
-  color: var(--font-color);
-  font-weight: 900;
+  color: var(--text-color-1);
+  font-weight: lighter;
 }
 h3 {
   color: var(--text-color-1);
+
+  /* font-weight: 50px; */
+
 }
 a {
   color: var(--link-color);
@@ -78,7 +85,7 @@ nav li a {
   text-align: center;
   padding: 1rem;
   font-size: 13px;
-  color: #fff;
+  color: #182d11;
 }
 nav ul li:nth-child(1) {
   justify-self: start;
@@ -106,9 +113,9 @@ main {
   display: flex;
   justify-content: center;
   animation: fadeInUp 1s ease;
-  /* padding-right: 0px;
-  background-color: rgb(64, 68, 105);
-  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1); */
+  padding-right: 0px;
+  background-color: rgb(85, 145, 99);
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /* .img-container:hover{
@@ -126,7 +133,7 @@ main {
 
 /* SOCIAL SVG CONTAINER */
 .social-container {
-  /* transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1); */
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
   position: absolute;
   top: 0px;
   right: -20px;
@@ -137,11 +144,11 @@ main {
   background-color: var(--bg-color);
 }
 
-/* .social-container:hover{
-  background-color: rgb(64, 68, 105);
+ .social-container:hover{
+  background-color: rgb(38, 72, 45);
   padding-left: 100px;
 
-} */
+} 
 
 main hr {
   display: block;
@@ -165,51 +172,86 @@ main hr {
 
 .quote-container {
   padding: 16px;
-  background-color: #838596;
-  opacity: 0;
+  background-color: #e7f1e4;
   border-radius: 3px;
-  filter: drop-shadow(0 0 0 rgba(54, 54, 54, 0.2));
-  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
-  transform-origin: right;
-  will-change: filter;
-  animation: dropShadow 1s ease forwards 1.5s;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 1px 4px rgba(0,0,0,.1);
 }
 .quote-container p {
   color: black;
 }
 
 .quote-container:hover {
-  filter: drop-shadow(10px 10px 2px rgba(255, 255, 255, 0.25));
+  /* filter: drop-shadow(10px 10px 2px rgba(255, 255, 255, 0.25)); */
+}
+
+.hobby-container{
+  /* padding-top: 3vh; */
+}
+
+.hobby-container p{
+  text-align: left;
+}
+#hobby{
+  padding: 7vh 16px;
+
+}
+#hobby h2{
+  text-align: left;
+  margin-left: 1rem;
+  font-weight: lighter;
+}
+#hobby p{
+  margin: 20px
 }
 
 /* Project Styles */
 
 #project {
-  padding: 15vh 16px;
+  padding: 7vh 16px;
 }
 #project h2 {
-  font-size: xx-large;
+  /* font-size: xx-large; */
   text-align: left;
   margin-left: 1rem;
+  font-weight: lighter;
 }
 .project-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
-  padding-top: 5vh;
+  padding-top: 3vh;
+}
+
+/* Experience Styles */
+#experience {
+  padding: 7vh 16px;
+  text-align: left;
+}
+
+#experience h2 {
+  /* font-size: xx-large; */
+  text-align: left;
+  margin-left: 1rem;
+}
+.experience-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding-top: 3vh;
 }
 
 /* Per Repo Styles*/
 
 .repository-container {
-  border: 1px solid #7b8383;
+  /* border: 1px solid #7b8383; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   gap: 8px;
   padding: 16px;
   border-radius: 5px;
-  background: #222431;
+  background: #e7f1e4;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 1px 4px rgba(0,0,0,.1);
 }
 .repository-container h3 {
   text-align: left;
@@ -242,10 +284,34 @@ main hr {
   font-weight: lighter;
   gap: 8px;
 }
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .language-used {
   font-size: 12px;
   color: #1bb6b6;
+  animation: slideIn 1s ease forwards;
+  font-style: italic;
 }
+.language-used-1 {
+  font-size: 12px;
+  color: #1bb6b6;
+  /* animation: slideIn 1s ease forwards; */
+  /* font-style: italic; */
+}
+
+.language-used{
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
 .more-repo {
   margin-top: 10px;
   display: block;
@@ -261,9 +327,9 @@ main hr {
   padding-top: 15vh;
 }
 .about-img-container {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .about-img-container img {
   border-radius: 50%;
@@ -277,6 +343,7 @@ main hr {
 }
 #about p {
   margin: 20px;
+  text-align: left;
 }
 .about-social-container li {
   display: flex;
@@ -293,6 +360,13 @@ main hr {
 #about h3 {
   text-align: left;
   margin: 10px 20px;
+}
+.skills{
+  text-align: left;
+  margin: 10px 20px;
+  color: var(--text-color-1);
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
 }
 .skill li {
   line-height: 30px;
@@ -320,6 +394,7 @@ footer {
 
   #about,
   #project,
+  #experience,
   nav ul {
     margin-left: 30%;
     margin-right: 30%;
@@ -392,17 +467,19 @@ footer {
 }
 
 .gradient {
+  font-weight: lighter;
   text-align: center;
   font-size: 2rem;
-  background: linear-gradient(
+  letter-spacing: -1px;
+  /* background: linear-gradient(
     -35deg,
-    var(--text-color-1) 0%,
+    var(--text-color-4) 10%,
     var(--text-color-2) 100%
-  );
-  background-size: 300%;
+  ); */
+  /* background-size: 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animated_text 10s ease-in-out infinite;
+  animation: animated_text 10s ease-in-out infinite; */
 }
 
 /* must have 1 inner div that wrap all content to work */
@@ -410,7 +487,22 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 10vh;
+}
+.tweet-text {
+  background-color: #fff2ac;
+  background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
+  font-weight: bolder;
+  font-size: 32px;
+  font-family: 'Roboto', sans-serif;
+  padding: 4px;
+}
+.instagram-media{
+  /* margin: -100px; */
+  scale: 0.5;}
+.hobby{
+  align-self: center;
+  /* size-adjust: ; */
 }
 
 /* .flex-end {
